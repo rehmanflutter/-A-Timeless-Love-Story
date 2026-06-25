@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amore — A Timeless Love Story</title>
+  <meta name="description"
+    content="Amore is a beautiful, romantic love story web experience — chapters, memories, love letters, and milestones, elegantly designed." />
+  <meta name="keywords" content="love story, romantic, memories, wedding, couple" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Amore — A Timeless Love Story" />
+  <meta property="og:description" content="A beautiful romantic love story experience for couples." />
+  <meta property="og:image"       content="https://amore.app/og-image.png" />
+
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Amore — A Timeless Love Story" />
+  <meta name="twitter:image"       content="https://amore.app/og-image.png" />
+
+  <link rel="manifest"    href="manifest.json" />
+  <meta name="theme-color" content="#FDF8F2" />
+  <link rel="preconnect"  href="https://fonts.googleapis.com" />
+  <link rel="preconnect"  href="https://fonts.gstatic.com" crossorigin />
+
+  <style>
+    html,body{margin:0;padding:0;background:#FDF8F2;height:100%}
+    #splash{
+      position:fixed;inset:0;
+      display:flex;align-items:center;justify-content:center;
+      flex-direction:column;gap:12px;
+      background:#FDF8F2;z-index:9999;
+      transition:opacity .5s ease;
+    }
+    #splash.hidden{opacity:0;pointer-events:none}
+    .splash-title{
+      font-family:Georgia,serif;font-size:28px;font-style:italic;
+      font-weight:700;letter-spacing:-.5px;
+      background:linear-gradient(135deg,#C0485A,#8B2035);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    }
+    .splash-hearts{font-size:20px;letter-spacing:6px;opacity:.6}
+  </style>
+</head>
+<body>
+  <div id="splash">
+    <div class="splash-title">Amore</div>
+    <div class="splash-hearts">♡ ♡ ♡</div>
+  </div>
+
+  <script>
+    window.addEventListener('flutter-first-frame', () => {
+      const s = document.getElementById('splash');
+      if(s){ s.classList.add('hidden'); setTimeout(()=>s.remove(),550); }
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
